@@ -1,0 +1,18 @@
+<launch>
+	<arg name="model" default="$(find visrviz)/urdf/8_us.urdf"/>
+	<arg name="gui" default="true"/>
+	<arg name="config_file" default="$(find visrviz)/rviz_config/multi_us_vis.rviz"/>
+
+	
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+	<param name="use_gui" value="$(arg gui)"/>
+	
+	<rosparam file="$(find visrviz)/dump.yaml" command="load"/>
+
+	<!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>-->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg config_file)" required="true"/> 
+	<node name="serial_node" pkg="rosserial_python" type="serial_node.py"/>
+	<node name="multi_us_pub" pkg="visrviz" type="multi_us_pub.py"/>
+</launch>
+

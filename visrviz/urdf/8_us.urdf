@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<robot name="8_us">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.3 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.05"/>
+     </visual>
+   </link>
+  <link name="us_sensor1">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor1"/>
+    <origin xyz="0.2 -0.15 0.1" rpy ="0 0 -0.785"/>
+  </joint>
+  <link name="us_sensor2">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_2" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor2"/>
+    <origin xyz="0.2 0 0.1" rpy= "0 0 0"/>
+  </joint>
+ <link name="us_sensor3">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_3" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor3"/>
+    <origin xyz="0.2 0.15 0.1" rpy= "0 0 0.785"/>
+  </joint>
+ <link name="us_sensor4">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_4" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor4"/>
+    <origin xyz="0 0.15 0.1" rpy= "0 0 1.57"/>
+  </joint>
+ <link name="us_sensor5">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_5" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor5"/>
+    <origin xyz="-0.2 0.15 0.1" rpy= "0 0 2.355"/>
+  </joint>
+ <link name="us_sensor6">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_6" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor6"/>
+    <origin xyz="-0.2 0 0.1" rpy= "0 0 -3.14"/>
+  </joint>
+ <link name="us_sensor7">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_7" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor7"/>
+    <origin xyz="-0.2 -0.15 0.1" rpy= "0 0 -2.355"/>
+  </joint>
+<link name="us_sensor8">
+    <visual>
+      <geometry>
+        <mesh filename="package://visrviz/urdf/files/model.dae"/>
+      </geometry>
+      <origin xyz="0 -0.0225 -0.0076"/>
+    </visual>
+  </link>
+  <joint name="base_8" type="fixed">
+    <parent link="base_link"/>
+    <child link="us_sensor8"/>
+    <origin xyz="0 -0.15 0.1" rpy= "0 0 -1.57"/>
+  </joint>
+</robot>
+

@@ -1,0 +1,4 @@
+/echo_pins: [52, 50, 32]
+/num_of_sensors: 3
+/trigger_pins: [53, 51, 33]
+serial_node: {baud: 57600, port: /dev/ttyACM0}
