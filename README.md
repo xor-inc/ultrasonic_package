@@ -7,3 +7,6 @@
   5.burn the 'us_rosnode_mega' to arduino
   6.roslaunch rosserial_python serialnode.py
   
+  to run code without error burn the arduino code each time as the parameters are changed
+  
+  
