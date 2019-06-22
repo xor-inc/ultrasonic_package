@@ -22,34 +22,36 @@ float range[]={1,2,3,4,5,6,7,8};
 int num_of_sensors=3,count=0;
 char *temps[]={"us_sensor1","us_sensor2","us_sensor3","us_sensor4","us_sensor5","us_sensor6","us_sensor7","us_sensor8","us_sensor9","us_sensor10","us_sensor11","us_sensor12"};
 
-
-void setup() {
-  nh.initNode();
-  nh.advertise(data_pub);
-   while(!nh.getParam("num_of_sensors", &num_of_sensors, 1))
+void getparam()
+{
+  while(!nh.getParam("num_of_sensors", &num_of_sensors, 1))
    {
     if(count>2)
-      {
       break;
-      }
     count++;  
    }count=0;
+  
    while(!nh.getParam("/trigger_pins",pin_trig,num_of_sensors))
   {
     if(count>2)
-      {
       break;
-      }
     count++;  
    }count=0;
+   
    while(!nh.getParam("/echo_pins",pin_echo,num_of_sensors))
   {
     if(count>2)
-      {
       break;
-      }
     count++;  
    }count=0;
+   
+   xyz.range_length=num_of_sensors;
+  xyz.frame_id_length=num_of_sensors;
+}
+void setup() {
+  nh.initNode();
+  nh.advertise(data_pub);
+   getparam();
   
   
   for(int i=0;i<num_of_sensors;i++)
@@ -105,6 +107,7 @@ xyz.seq= sequence;
 data_pub.publish( &xyz );
 
 nh.spinOnce();
-//delay(10);//should have a delay,or leads to 'out of sync error'
+
 sequence++;
+
 }
