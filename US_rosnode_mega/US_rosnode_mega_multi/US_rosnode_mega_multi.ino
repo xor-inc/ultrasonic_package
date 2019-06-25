@@ -69,6 +69,7 @@ void setup() {
   xyz.range_length=num_of_sensors;
   xyz.frame_id_length=num_of_sensors;
   
+  
  
   xyz.frame_id=temps;
   
@@ -90,15 +91,14 @@ void loop() {
   digitalWrite(pin_trig[j],HIGH);
   delayMicroseconds(10);
   digitalWrite(pin_trig[j],LOW);
-  delayMicroseconds(15);
+  
  
-  duration = pulseIn(pin_echo[j],HIGH,18000UL);//time in uS
-  if(duration>23429)
-    distance=4.1;
-  else  
-    distance = duration*0.00017;
+  duration = pulseInLong(pin_echo[j],HIGH,25000UL);//time in uS
+   
+  distance = duration*0.00017;
   
   range[j]=distance;
+  delayMicroseconds(25000-duration);
   }
  
 xyz.range=range;  

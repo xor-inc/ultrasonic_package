@@ -1,5 +1,5 @@
 # ultrasonic_package
-#installation
+# installation
   1.download and catkin_make "rosserial" package in your workspace(not included)
   2.place the 'alt_msgs' and 'visrviz' in your catkin workspace and catkin_make
   3.with "ros rosserial_arduino make_libraries.py <sketchbook>/libraries/" command all ros files will be made for arduino.
@@ -8,5 +8,13 @@
   6.roslaunch rosserial_python serialnode.py
   
   to run code without error burn the arduino code each time as the parameters are changed
+# daily log/inference
+	1.air movement affects sound.(creates fluctuations)
+	2.temperature change affects speed of sound
+	
+# improvement
+	1.serial comm.-send only range instead of the custom msg
+	2.use interruts
+	
   
   
